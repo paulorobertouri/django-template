@@ -1,0 +1,41 @@
+[project]
+name = "django-template"
+version = "0.1.0"
+description = "Django template with Ninja Swagger, DI services and JWT auth"
+requires-python = ">=3.12"
+dependencies = [
+    "django",
+    "django-ninja",
+    "PyJWT",
+    "python-dotenv",
+    "uvicorn[standard]",
+]
+
+[dependency-groups]
+dev = [
+    "mypy",
+    "pre-commit",
+    "pyright",
+    "pytest",
+    "pytest-cov",
+    "pytest-django",
+    "ruff",
+]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "django_template.settings"
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.mypy]
+explicit_package_bases = true
+ignore_missing_imports = true
