@@ -22,6 +22,7 @@ Modern Django template with service/repository layering, JWT auth, and test cove
 ## JWT Contract
 
 Login returns:
+
 - Body: `{"token":"..."}`
 - Header: `Authorization: Bearer <token>`
 - Header: `X-JWT-Token: <token>`
