@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: install install-dev run test docker-build docker-test docker-curl-test
+.PHONY: install install-dev run test format docker-build docker-test docker-curl-test
 
 install:
 	./scripts/ubuntu/install.sh
@@ -13,6 +13,9 @@ run:
 
 test:
 	./scripts/ubuntu/test.sh
+
+format:
+	bash ./scripts/ubuntu/format.sh
 
 docker-build:
 	docker build -f docker/build.Dockerfile -t django-template-build .

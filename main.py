@@ -7,7 +7,7 @@ load_dotenv()
 
 if __name__ == "__main__":
     uvicorn.run(
-        "django_template.asgi:application",
+        "config.asgi:application",
         host=getenv("HOST", "0.0.0.0"),
         port=int(getenv("PORT", "8000")),
         reload=getenv("DJANGO_ENV", "development") != "production",
