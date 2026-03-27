@@ -11,6 +11,10 @@ dependencies = [
     "uvicorn[standard]",
 ]
 
+[tool.uv]
+include = ["app/**"]
+default-groups = ["dev"]
+
 [dependency-groups]
 dev = [
     "mypy",
@@ -22,8 +26,6 @@ dev = [
     "ruff",
 ]
 
-[tool.uv]
-default-groups = ["dev"]
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "config.settings"
