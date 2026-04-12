@@ -3,9 +3,9 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 WORKDIR /app
 COPY pyproject.toml ./
 RUN uv sync --no-dev
-COPY django_template/ ./django_template/
+COPY config/ ./config/
 COPY app/ ./app/
 COPY main.py ./
 COPY manage.py ./
 ENV PATH="/app/.venv/bin:$PATH"
-CMD ["uvicorn", "django_template.asgi:application", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "config.asgi:application", "--host", "0.0.0.0", "--port", "8000"]

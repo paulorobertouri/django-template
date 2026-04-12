@@ -1,6 +1,6 @@
 # django-template
 
-Modern Django template with service/repository layering, JWT auth, and test coverage.
+Production-ready Django template with service/repository layering, JWT auth, and test coverage.
 
 ## Stack
 
